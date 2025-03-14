@@ -3,625 +3,644 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A2ZPrintSupply - Your Trusted Partner in Printer Cartridges & Metal Scrap Trading</title>
+    <title>Saisei Global Trade Private Limited</title>
     <style>
-        :root {
-            --primary: #1a5276;
-            --secondary: #3498db;
-            --accent: #f39c12;
-            --light: #f5f5f5;
-            --dark: #2c3e50;
-            --text: #333;
-            --white: #fff;
-        }
-        
+        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         html {
             scroll-behavior: smooth;
         }
-        
+
         body {
-            color: var(--text);
+            background-color: #f9f9f9;
+            color: #333;
             line-height: 1.6;
         }
-        
-        h1, h2, h3, h4 {
-            color: var(--dark);
-            margin-bottom: 1rem;
+
+        img {
+            max-width: 100%;
+            height: auto;
         }
-        
-        p {
-            margin-bottom: 1rem;
-        }
-        
+
         .container {
-            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
-        /* Header & Navigation */
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: #3498db;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Styles */
         header {
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 1rem 0;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        
-        .header-content {
+
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px 0;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
         }
-        
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
         .logo-img {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
-            background-color: var(--white);
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+            background-color: #f1f1f1;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--primary);
+        }
+
+        .logo-img span {
+            font-size: 1.2rem;
+            color: #3498db;
             font-weight: bold;
-            font-size: 16px;
         }
-        
-        .logo h1 {
-            color: var(--white);
-            font-size: 1.5rem;
-            margin: 0;
-        }
-        
-        .logo-highlight {
-            color: var(--accent);
-        }
-        
+
         nav ul {
             display: flex;
             list-style: none;
         }
-        
+
         nav ul li {
-            margin-left: 1.5rem;
+            margin-left: 30px;
         }
-        
+
         nav ul li a {
-            color: var(--white);
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
+            color: #2c3e50;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
         }
-        
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #3498db;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
         nav ul li a:hover {
-            color: var(--accent);
+            color: #3498db;
         }
-        
-        .mobile-menu-btn {
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
             display: none;
-            background: none;
-            border: none;
-            color: var(--white);
             font-size: 1.5rem;
             cursor: pointer;
         }
-        
+
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/api/placeholder/1920/1080') no-repeat center center/cover;
             height: 100vh;
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://via.placeholder.com/1920x1080');
+            background-size: cover;
+            background-position: center;
+            color: white;
             display: flex;
             align-items: center;
-            color: var(--white);
             text-align: center;
-            padding-top: 80px;
         }
-        
+
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
         }
-        
-        .hero h1 {
-            font-size: 3rem;
-            color: var(--white);
-            margin-bottom: 1.5rem;
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
         }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 300;
         }
-        
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background-color: var(--accent);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
+
+        /* Products Section */
+        .products {
+            background-color: #fff;
         }
-        
-        .btn:hover {
-            background-color: #e67e22;
-            transform: translateY(-3px);
+
+        .product {
+            margin-bottom: 80px;
         }
-        
-        /* About Section */
-        .section {
-            padding: 5rem 0;
+
+        .product:last-child {
+            margin-bottom: 0;
         }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
+
+        .product-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .product-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .product-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .product-description {
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        .product-slider {
+            flex: 1;
+            min-width: 300px;
             position: relative;
         }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 100px;
-            height: 3px;
-            background-color: var(--accent);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
+
+        .slide {
+            display: none;
+            text-align: center;
         }
-        
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide img {
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .slider-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+
+        .slider-btn:hover {
+            background-color: #2980b9;
+            transform: scale(1.1);
+        }
+
+        /* About Section */
         .about {
-            background-color: var(--light);
+            background-color: #f9f9f9;
         }
-        
+
         .about-content {
             display: flex;
             flex-wrap: wrap;
-            gap: 2rem;
             align-items: center;
+            gap: 50px;
         }
-        
+
         .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .feature {
-            flex: 1;
-            min-width: 250px;
-            padding: 1.5rem;
-            background-color: var(--white);
-            border-radius: 5px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-        
-        .feature-icon {
-            font-size: 2rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-        
-        /* Products Section */
-        .products {
-            background-color: var(--white);
-        }
-        
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Changed to 2 columns */
-            gap: 2rem;
-        }
-        
-        .product-card {
-            background-color: var(--white);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .product-image {
-            position: relative;
-            height: 250px;
-            overflow: hidden;
-        }
-        
-        .slider-container {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-        
-        .slider-container img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-        
-        .slider-controls {
-            position: absolute;
-            bottom: 10px;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        
-        .slider-dot {
-            width: 12px;
-            height: 12px;
-            background-color: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .slider-dot.active {
-            background-color: var(--accent);
-        }
-        
-        .slider-arrows {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 10px;
-            transform: translateY(-50%);
-        }
-        
-        .slider-arrow {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(0, 0, 0, 0.3);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .slider-arrow:hover {
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        
-        .product-info {
-            padding: 1.5rem;
-        }
-        
-        .product-info h3 {
-            margin-bottom: 0.5rem;
-        }
-        
-        .product-price {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        
-        /* Image Expand Button */
-        .expand-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 30px;
-            height: 30px;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            z-index: 10;
-        }
-        
-        .expand-button:hover {
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-        
-        /* Image Modal */
-        .image-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            z-index: 2000;
-            overflow: auto;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .modal-content {
-            position: relative;
-            max-width: 90%;
-            max-height: 90%;
-            margin: auto;
-        }
-        
-        .modal-content img {
-            max-width: 100%;
-            max-height: 90vh;
-            display: block;
-            margin: 0 auto;
-            object-fit: contain;
-        }
-        
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 40px;
-            color: var(--white);
-            cursor: pointer;
-            z-index: 2001;
-        }
-        
-        .modal-slider-arrows {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 20px;
-            transform: translateY(-50%);
-            z-index: 2001;
-        }
-        
-        .modal-slider-arrow {
-            width: 50px;
-            height: 50px;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .modal-slider-arrow:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-        
-        /* Contact Section */
-        .contact {
-            background-color: var(--light);
-        }
-        
-        .contact-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
-        }
-        
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-            max-width: 600px;
-        }
-        
-        .contact-details {
-            margin-top: 1.5rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-        }
-        
-        .contact-icon {
-            margin-right: 1rem;
-            color: var(--accent);
-            font-size: 1.2rem;
-            width: 30px;
-            height: 30px;
-            background-color: var(--accent);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: var(--white);
-            padding: 3rem 0 1rem;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-logo {
             flex: 2;
             min-width: 300px;
         }
-        
-        .footer-logo h2 {
-            color: var(--white);
-            margin-bottom: 1rem;
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
         }
-        
-        .footer-links {
+
+        .about-image img {
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .highlight {
+            color: #3498db;
+            font-weight: 600;
+        }
+
+        .features {
+            margin-top: 30px;
+        }
+
+        .feature {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .feature::before {
+            content: "✔";
+            color: #3498db;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #fff;
+        }
+
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .contact-icon {
+            margin-right: 15px;
+            color: #3498db;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section {
             flex: 1;
             min-width: 200px;
         }
-        
-        .footer-links h3 {
-            color: var(--white);
-            margin-bottom: 1rem;
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
         }
-        
-        .footer-links ul {
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: #3498db;
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links {
             list-style: none;
         }
-        
-        .footer-links ul li {
-            margin-bottom: 0.5rem;
+
+        .footer-links li {
+            margin-bottom: 10px;
         }
-        
-        .footer-links ul li a {
-            color: #bbb;
+
+        .footer-links a {
+            color: #ecf0f1;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
         }
-        
-        .footer-links ul li a:hover {
-            color: var(--accent);
+
+        .footer-links a:hover {
+            color: #3498db;
+            padding-left: 5px;
         }
-        
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: #3498db;
+            transform: translateY(-5px);
+        }
+
         .copyright {
             text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 0.9rem;
         }
-        
+
         /* Responsive Styles */
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            nav {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 80%;
-                height: calc(100vh - 70px);
-                background-color: var(--primary);
-                transition: left 0.3s;
-                padding: 2rem;
-            }
-            
-            nav.active {
-                left: 0;
-            }
-            
-            nav ul {
-                flex-direction: column;
-            }
-            
-            nav ul li {
-                margin: 1rem 0;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .product-grid {
-                grid-template-columns: 1fr; /* Single column on mobile */
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero h1 {
+        @media screen and (max-width: 768px) {
+            .section-title {
                 font-size: 2rem;
             }
-            
-            .section {
-                padding: 3rem 0;
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                flex-direction: column;
+                padding: 20px 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 0;
+                padding: 15px 20px;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .product-content {
+                flex-direction: column;
+            }
+
+            .about-content {
+                flex-direction: column;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header & Navigation -->
-    <header id="home">
-        <div class="container header-content">
+    <!-- Header Section -->
+    <header id="header">
+        <div class="container header-container">
             <div class="logo">
-                <div class="logo-img">A2Z</div>
-                <h1><span class="logo-highlight">A2Z</span>PrintSupply</h1>
+                <div class="logo-img">
+                    <span>SG</span>
+                </div>
+                <div class="logo-text">Saisei Global Trade</div>
             </div>
-            <button class="mobile-menu-btn">☰</button>
-            <nav id="nav">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
+            <nav>
+                <ul id="nav-menu">
                     <li><a href="#products">Products</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
+                <div class="mobile-menu" id="mobile-menu">☰</div>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" style="position: relative; background: url('Designer\ \(38\).jpeg') center/cover no-repeat; color: white; text-align: center; padding: 100px 20px;">
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
-        <div class="container hero-content" style="position: relative; z-index: 2;">
-            <h1>Your Trusted Partner in Printer Cartridges & Metal Scrap Trading</h1>
-            <p>With over 15 years of experience, we provide high-quality printer cartridges and non-ferrous metal scraps sourced from global markets.</p>
-            <a href="#products" class="btn" style="display: inline-block; padding: 10px 20px; background: #ff6600; color: white; text-decoration: none; border-radius: 5px;">View Products</a>
+<section class="hero" style="position: relative; background: url('Designer\ \(41\).jpeg') center/cover no-repeat; color: white; text-align: center; padding: 100px 20px;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6);"></div>
+    <div class="container hero-content" style="position: relative; z-index: 1;">
+        <h1 class="hero-title">Saisei Global Trade Private Limited</h1>
+        <p class="hero-subtitle">Your Trusted Partner in Printer Cartridge Solutions and Metal Scrap Trading</p>
+        <a href="#products" class="btn" style="background: #ff6600; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Explore Our Products</a>
+    </div>
+</section>
+
+
+    <!-- Products Section -->
+    <section id="products" class="section products">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+
+            <!-- Product 1: Cartridges -->
+            <div class="product">
+                <div class="product-content">
+                    <div class="product-text">
+                        <h3 class="product-title">Printer Cartridges</h3>
+                        <p class="product-description">
+                            We offer an extensive range of high-quality printer cartridges sourced from Europe, the UK, China, Japan, and other global markets. Our comprehensive collection includes:
+                        </p>
+                        <p class="product-description">
+                            Our network includes some of the most reputed vendors and suppliers, allowing us to provide top-quality empty, used, OEM inkjet and toner cartridges and recycled printer cartridges at competitive prices.
+                        </p>
+                        <p class="product-description">
+                            Whether you are a reseller, distributor, or corporate buyer, we ensure quick deliveries, best pricing, and seamless logistics for all your printer cartridge needs.
+                        </p>
+                    </div>
+                    <div class="product-slider">
+                        <div class="slide active">
+                            <img src="WhatsApp Image 2025-03-10 at 04.22.59_350185ad.jpg" alt="Printer Cartridge 1">
+                        </div>
+                        <div class="slide">
+                            <img src="WhatsApp Image 2025-03-10 at 04.22.59_c1ec77b3.jpg" alt="Printer Cartridge 2">
+                        </div>
+                        <div class="slide">
+                            <img src="WhatsApp Image 2025-03-10 at 04.23.28_e8bcdcb9.jpg" alt="Printer Cartridge 3">
+                        </div>
+                        <div class="slider-controls">
+                            <button class="slider-btn prev-btn" data-slider="cartridge-slider">←</button>
+                            <button class="slider-btn next-btn" data-slider="cartridge-slider">→</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2: Metal Scrap -->
+            <div class="product">
+                <div class="product-content">
+                    <div class="product-text">
+                        <h3 class="product-title">Metal Scrap</h3>
+                        <p class="product-description">
+                            We are engaged in the procurement and distribution of metal scraps across India. We specialize in non-ferrous scraps like zorba, zurik, aluminum, copper, and brass used in various industries.
+                        </p>
+                        <p class="product-description">
+                            Our strong partnerships with global scrap yards and recyclers help us offer a consistent supply of premium-grade materials to meet the demands of Indian buyers.
+                        </p>
+                        <p class="product-description">
+                            1914 translation by H. Rackham
+
+                            "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
+                            Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
+                            
+                            "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."                        </p>
+                    </div>
+                    <div class="product-slider">
+                        <div class="slide active">
+                            <img src="Designer (42).jpeg" alt="Metal Scrap 1">
+                        </div>
+                        <div class="slide">
+                            <img src="Designer (43).jpeg" alt="Metal Scrap 2">
+                        </div>
+                        <div class="slide">
+                            <img src="Designer (44).jpeg" alt="Metal Scrap 3">
+                        </div>
+                        <div class="slider-controls">
+                            <button class="slider-btn prev-btn" data-slider="scrap-slider">←</button>
+                            <button class="slider-btn next-btn" data-slider="scrap-slider">→</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template for adding more products in the future -->
+            <!-- 
+            <div class="product">
+                <div class="product-content">
+                    <div class="product-text">
+                        <h3 class="product-title">Product Name</h3>
+                        <p class="product-description">
+                            Product description paragraph 1...
+                        </p>
+                        <p class="product-description">
+                            Product description paragraph 2...
+                        </p>
+                        <p class="product-description">
+                            Product description paragraph 3...
+                        </p>
+                    </div>
+                    <div class="product-slider">
+                        <div class="slide active">
+                            <img src="/api/placeholder/600/400" alt="Product Image 1">
+                        </div>
+                        <div class="slide">
+                            <img src="/api/placeholder/600/400" alt="Product Image 2">
+                        </div>
+                        <div class="slide">
+                            <img src="/api/placeholder/600/400" alt="Product Image 3">
+                        </div>
+                        <div class="slider-controls">
+                            <button class="slider-btn prev-btn" data-slider="new-product-slider">←</button>
+                            <button class="slider-btn next-btn" data-slider="new-product-slider">→</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            -->
         </div>
     </section>
-    
 
     <!-- About Section -->
     <section id="about" class="section about">
@@ -629,188 +648,119 @@
             <h2 class="section-title">About Us</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Welcome to PrintScrapHub, your trusted partner in printer cartridge solutions and metal scrap trading. With over 15 years of experience, we have established ourselves as a leading supplier of high-quality printer cartridges and printing supplies and a reliable importer, trader of non-ferrous metal scraps in India.</p>
+                    <p>
+                        Welcome to Saisei Global Trade Private Limited, your trusted partner in printer cartridge solutions and metal scrap trading. With over 15 years of experience, we have established ourselves as a leading supplier of high-quality printer cartridges and printing supplies and a reliable importer and trader of non-ferrous metal scraps in India.
+                    </p>
+                    <h3 class="product-title">Our Expertise in Printer Cartridges</h3>
+                    <p>
+                        For over a decade and a half, we have been at the forefront of the printer cartridge industry, offering an extensive range of products sourced from Europe, the UK, China, Japan, and other global markets. Our network includes some of the most reputed vendors and suppliers, allowing us to provide top-quality empty, used, OEM inkjet and toner cartridges and recycled printer cartridges at competitive prices.
+                    </p>
+                    <p>
+                        Whether you are a reseller, distributor, or corporate buyer, we ensure quick deliveries, best pricing, and seamless logistics.
+                    </p>
                     
-                    <h3>Our Expertise in Printer Cartridges</h3>
-                    <p>For over a decade and a half, we have been at the forefront of the printer cartridge industry, offering an extensive range of products sourced from Europe, the UK, China, Japan, and other global markets. Our network includes some of the most reputed vendors and suppliers, allowing us to provide top-quality empty, used, OEM inkjet and toner cartridges and recycled printer cartridges at competitive prices. Whether you are a reseller, distributor, or corporate buyer, we ensure quick deliveries, best pricing, and seamless logistics.</p>
+                    <h3 class="product-title">Metal Scrap Trading in India</h3>
+                    <p>
+                        Expanding our portfolio, we are also engaged in the procurement and distribution of metal scraps across India. We specialize in non-ferrous scraps like zorba, zurik, aluminum, copper, and brass used in various industries. Our strong partnerships with global scrap yards and recyclers help us offer a consistent supply of premium-grade materials to meet the demands of Indian buyers.
+                    </p>
                     
-                    <h3>Metal Scrap Trading in India</h3>
-                    <p>Expanding our portfolio, we are also engaged in the procurement and distribution of metal scraps across India. We specialize in non-ferrous scraps like zorba, zurik, aluminum, copper, and brass used in various industries. Our strong partnerships with global scrap yards and recyclers help us offer a consistent supply of premium-grade materials to meet the demands of Indian buyers.</p>
+                    <h3 class="product-title">Environmental Commitment & Sustainability</h3>
+                    <p>
+                        At Saisei Global Trade, we are deeply committed to environmental sustainability. Our business model inherently promotes recycling and reuse through our cartridge recycling programs and metal scrap trading, which helps reduce waste and conserve natural resources.
+                    </p>
+                    <p>
+                        We adhere to all environmental regulations and continuously seek ways to minimize our carbon footprint. By choosing us as your partner, you're not just making a business decision but also contributing to a more sustainable future.
+                    </p>
+                    
+                    <h3 class="product-title">Why Choose Us?</h3>
+                    <div class="features">
+                        <div class="feature">15+ Years of Experience – Trusted by global partners for reliable sourcing and quality assurance.</div>
+                        <div class="feature">Strong Global Network – Sourcing directly from Europe, the UK, China, and Japan for the best quality products.</div>
+                        <div class="feature">Competitive Pricing – Offering the best prices with transparent and fair trade practices.</div>
+                        <div class="feature">Efficient Logistics – Hassle-free shipping and delivery to ensure smooth business operations.</div>
+                        <div class="feature">Customer-Centric Approach – Building long-term relationships through trust, efficiency, and professionalism.</div>
+                        <div class="feature">Environmental Responsibility – Committed to sustainable business practices and ethical sourcing.</div>
+                    </div>
+                    
+                    <p>
+                        At Saisei Global Trade Private Limited, we believe in sustainable business practices, ethical sourcing, and customer satisfaction. Whether you need printer cartridges or quality metal scraps, we are your one-stop solution in India.
+                    </p>
                 </div>
                 <div class="about-image">
-                    <img src="Designer (39).jpeg" alt="PrintScrapHub Office">
-                </div>
-            </div>
-            
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">🏆</div>
-                    <h3>15+ Years of Experience</h3>
-                    <p>Trusted by global partners for reliable sourcing and quality assurance.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🌐</div>
-                    <h3>Strong Global Network</h3>
-                    <p>Sourcing directly from Europe, the UK, China, and Japan for the best quality products.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">💰</div>
-                    <h3>Competitive Pricing</h3>
-                    <p>Offering the best prices with transparent and fair trade practices.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🚚</div>
-                    <h3>Efficient Logistics</h3>
-                    <p>Hassle-free shipping and delivery to ensure smooth business operations.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🤝</div>
-                    <h3>Customer-Centric Approach</h3>
-                    <p>Building long-term relationships through trust, efficiency, and professionalism.</p>
+                    <img src="Designer (45).jpeg" alt="About Us Image">
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Products Section -->
-    <section id="products" class="section products">
-        <div class="container">
-            <h2 class="section-title">Our Products</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <div class="slider-container" id="product-slider-1">
-                            <img src="WhatsApp Image 2025-03-10 at 04.22.59_350185ad.jpg" alt="Printer Cartridge 1">
-                            <img src="WhatsApp Image 2025-03-10 at 04.22.59_c1ec77b3.jpg" alt="Printer Cartridge 2">
-                            <img src="WhatsApp Image 2025-03-10 at 04.22.59_c1ec77b3.jpg" alt="Printer Cartridge 3">
-                        </div>
-                        <div class="slider-arrows">
-                            <div class="slider-arrow" id="prev-slide-1">❮</div>
-                            <div class="slider-arrow" id="next-slide-1">❯</div>
-                        </div>
-                        <div class="slider-controls" id="slider-dots-1">
-                            <span class="slider-dot active" data-slide="0"></span>
-                            <span class="slider-dot" data-slide="1"></span>
-                            <span class="slider-dot" data-slide="2"></span>
-                        </div>
-                        <div class="expand-button" data-product="1">⤢</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>HP Compatible Toner Cartridges</h3>
-                        <p>
-                            Premium quality empty toner cartridges for HP printers, ready for refilling. Sourced directly from Europe.</p>
-                        <div class="product-price">Contact for Price</div>
-                        <a href="tel:+919876543210" class="btn">Call Now</a>
-                    </div>
-                </div>
-                <!-- Example of a second product -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <div class="slider-container" id="product-slider-2">
-                            <img src="WhatsApp Image 2025-03-10 at 04.23.47_79a29a5a.jpg" alt="Canon Cartridge 1">
-                            <img src="WhatsApp Image 2025-03-10 at 04.22.59_c1ec77b3.jpg" alt="Canon Cartridge 2">
-                            <img src="Designer (38).jpeg" alt="Canon Cartridge 3">
-                        </div>
-                        <div class="slider-arrows">
-                            <div class="slider-arrow" id="prev-slide-2">❮</div>
-                            <div class="slider-arrow" id="next-slide-2">❯</div>
-                        </div>
-                        <div class="slider-controls" id="slider-dots-2">
-                            <span class="slider-dot active" data-slide="0"></span>
-                            <span class="slider-dot" data-slide="1"></span>
-                            <span class="slider-dot" data-slide="2"></span>
-                        </div>
-                        <div class="expand-button" data-product="2">⤢</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Canon Inkjet Cartridges</h3>
-                        <p>High-quality empty cartridges for Canon printers. Perfect for refilling businesses and recycling centers.</p>
-                        <div class="product-price">Contact for Price</div>
-                        <a href="tel:+919876543210" class="btn">Call Now</a>
-                    </div>
-                </div>
-                <!-- More products will be added here in the future -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <div class="slider-container" id="product-slider-2">
-                            <img src="WhatsApp Image 2025-03-10 at 04.23.47_79a29a5a.jpg" alt="Canon Cartridge 1">
-                            <img src="WhatsApp Image 2025-03-10 at 04.22.59_c1ec77b3.jpg" alt="Canon Cartridge 2">
-                            <img src="Designer (38).jpeg" alt="Canon Cartridge 3">
-                        </div>
-                        <div class="slider-arrows">
-                            <div class="slider-arrow" id="prev-slide-2">❮</div>
-                            <div class="slider-arrow" id="next-slide-2">❯</div>
-                        </div>
-                        <div class="slider-controls" id="slider-dots-2">
-                            <span class="slider-dot active" data-slide="0"></span>
-                            <span class="slider-dot" data-slide="1"></span>
-                            <span class="slider-dot" data-slide="2"></span>
-                        </div>
-                        <div class="expand-button" data-product="2">⤢</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Canon Inkjet Cartridges</h3>
-                        <p>High-quality empty cartridges for Canon printers. Perfect for refilling businesses and recycling centers.</p>
-                        <div class="product-price">Contact for Price</div>
-                        <a href="tel:+919876543210" class="btn">Call Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Image Modal for Expanded View -->
-    <div id="image-modal" class="image-modal">
-        <span class="close-modal">&times;</span>
-        <div class="modal-slider-arrows">
-            <div class="modal-slider-arrow" id="modal-prev">❮</div>
-            <div class="modal-slider-arrow" id="modal-next">❯</div>
-        </div>
-        <div class="modal-content">
-            <img id="modal-image" src="" alt="Expanded product image">
-        </div>
-    </div>
 
     <!-- Contact Section -->
     <section id="contact" class="section contact">
         <div class="container">
             <h2 class="section-title">Contact Us</h2>
-            <div class="contact-wrapper">
+            <div class="contact-content">
                 <div class="contact-info">
                     <h3>Get In Touch</h3>
-                    <p>We'd love to hear from you! Whether you have questions about our products, pricing, or want to discuss business opportunities, our team is ready to assist you.</p>
+                    <p>Whether you're interested in our products or want to explore business opportunities, we'd love to hear from you.</p>
                     
                     <div class="contact-details">
                         <div class="contact-item">
                             <div class="contact-icon">📍</div>
                             <div>
-                                <h4>Address</h4>
-                                <p>123 Business Street, Industrial Area, Mumbai, India - 400001</p>
+                                <strong>Address:</strong><br>
+                                Saisei Global Trade Private Limited<br>
+                                123 Business Park, Main Street<br>
+                                Mumbai, Maharashtra, India
                             </div>
                         </div>
                         
                         <div class="contact-item">
-                            <div class="contact-icon">📞</div>
+                            <div class="contact-icon">📱</div>
                             <div>
-                                <h4>Phone</h4>
-                                <p><a href="tel:+919876543210" style="color: var(--primary); text-decoration: none;">+91 9876543210</a></p>
+                                <strong>Phone:</strong><br>
+                                +91 98765 43210
                             </div>
                         </div>
                         
                         <div class="contact-item">
                             <div class="contact-icon">✉️</div>
                             <div>
-                                <h4>Email</h4>
-                                <p><a href="mailto:info@a2zprintsupply.com" style="color: var(--primary); text-decoration: none;">info@a2zprintsupply.com</a></p>
+                                <strong>Email:</strong><br>
+                                info@saiseiglobal.com
                             </div>
                         </div>
                         
                         <div class="contact-item">
                             <div class="contact-icon">🕒</div>
                             <div>
-                                <h4>Business Hours</h4>
-                                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                                <p>Saturday: 9:00 AM - 1:00 PM</p>
+                                <strong>Business Hours:</strong><br>
+                                Monday - Friday: 9:00 AM - 6:00 PM<br>
+                                Saturday: 10:00 AM - 2:00 PM<br>
+                                Sunday: Closed
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Business Inquiries</h3>
+                    <p>For business partnership, bulk orders, or distribution opportunities, please contact our business development team directly.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">👨‍💼</div>
+                            <div>
+                                <strong>Business Development:</strong><br>
+                                business@saiseiglobal.com<br>
+                                +91 98765 12345
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">🌐</div>
+                            <div>
+                                <strong>International Inquiries:</strong><br>
+                                international@saiseiglobal.com<br>
+                                +91 98765 67890
                             </div>
                         </div>
                     </div>
@@ -822,216 +772,128 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h2><span class="logo-highlight">A2Z</span>PrintSupply</h2>
-                    <p>Your trusted partner in printer cartridge solutions and metal scrap trading for over 15 years.</p>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Saisei Global Trade</h3>
+                    <p>Your trusted partner in printer cartridge solutions and metal scrap trading with over 15 years of experience in the industry.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">FB</a>
+                        <a href="#" class="social-icon">IN</a>
+                        <a href="#" class="social-icon">TW</a>
+                    </div>
                 </div>
                 
-                <div class="footer-links">
+                <div class="footer-section">
                     <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
+                    <ul class="footer-links">
                         <li><a href="#products">Products</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-links">
+                <div class="footer-section">
                     <h3>Products</h3>
-                    <ul>
+                    <ul class="footer-links">
                         <li><a href="#products">Printer Cartridges</a></li>
-                        <li><a href="#products">Toner Cartridges</a></li>
-                        <li><a href="#products">Inkjet Cartridges</a></li>
-                        <li><a href="#products">Metal Scraps</a></li>
+                        <li><a href="#products">Metal Scrap</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2025 A2ZPrintSupply. All Rights Reserved.</p>
+                &copy; 2025 Saisei Global Trade Private Limited. All Rights Reserved.
             </div>
         </div>
     </footer>
 
+    <!-- JavaScript -->
     <script>
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const nav = document.getElementById('nav');
-    
-    mobileMenuBtn.addEventListener('click', () => {
-        nav.classList.toggle('active');
-    });
-    
-    // Function to initialize slider for each product
-    function initProductSlider(productContainer) {
-        const productId = productContainer.querySelector('.expand-button').getAttribute('data-product');
-        const sliderContainer = productContainer.querySelector('.slider-container');
-        const sliderDots = productContainer.querySelectorAll('.slider-dot');
-        const prevSlide = productContainer.querySelector('.slider-arrow:first-child');
-        const nextSlide = productContainer.querySelector('.slider-arrow:last-child');
-        
-        if (!sliderContainer || sliderDots.length === 0) return; // Skip if slider not found
-    
-        let currentSlide = 0;
-        const totalSlides = sliderDots.length;
-        const slideWidth = 100; // 100%
-    
-        // Update slider position function
-        function updateSlider() {
-            sliderContainer.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
-    
-            // Update active dot
-            sliderDots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentSlide);
-            });
-        }
-    
-        // Store current slide position in a global object for modal access
-        window.productSliders = window.productSliders || {};
-        window.productSliders[productId] = {
-            container: sliderContainer,
-            currentSlide: currentSlide,
-            totalSlides: totalSlides,
-            updateSlider: updateSlider
-        };
-    
-        // Dot navigation
-        sliderDots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentSlide = index;
-                window.productSliders[productId].currentSlide = currentSlide;
-                updateSlider();
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.getElementById('nav-menu').classList.remove('active');
             });
         });
-    
-        // Arrow navigation
-        prevSlide.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent event bubbling
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            window.productSliders[productId].currentSlide = currentSlide;
-            updateSlider();
+
+        // Slider Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize all sliders
+            initSlider('cartridge-slider', 0);
+            initSlider('scrap-slider', 0);
+            
+            // Set up event listeners for slider buttons
+            document.querySelectorAll('.slider-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const sliderId = this.getAttribute('data-slider');
+                    const direction = this.classList.contains('prev-btn') ? 'prev' : 'next';
+                    
+                    // Find the closest product-slider container
+                    const sliderContainer = this.closest('.product-slider');
+                    const currentIndex = parseInt(sliderContainer.getAttribute('data-current-slide') || 0);
+                    const slides = sliderContainer.querySelectorAll('.slide');
+                    
+                    // Calculate new index
+                    let newIndex;
+                    if (direction === 'prev') {
+                        newIndex = (currentIndex - 1 + slides.length) % slides.length;
+                    } else {
+                        newIndex = (currentIndex + 1) % slides.length;
+                    }
+                    
+                    // Update slider
+                    updateSlider(sliderContainer, newIndex);
+                });
+            });
         });
-    
-        nextSlide.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent event bubbling
-            currentSlide = (currentSlide + 1) % totalSlides;
-            window.productSliders[productId].currentSlide = currentSlide;
-            updateSlider();
-        });
-    
-        // Add expand button functionality
-        const expandButton = productContainer.querySelector('.expand-button');
-        expandButton.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent event bubbling
-            openModal(productId, currentSlide);
-        });
-    }
-    
-    // Modal functionality for expanded view
-    const imageModal = document.getElementById('image-modal');
-    const modalImage = document.getElementById('modal-image');
-    const closeModal = document.querySelector('.close-modal');
-    const modalPrev = document.getElementById('modal-prev');
-    const modalNext = document.getElementById('modal-next');
-    
-    let currentModalProductId = null;
-    
-    function openModal(productId, slideIndex) {
-        if (!window.productSliders[productId]) return;
-        
-        currentModalProductId = productId;
-        const productSlider = window.productSliders[productId];
-        const slides = productSlider.container.querySelectorAll('img');
-        
-        // Set the modal image to the current slide
-        if (slides[slideIndex]) {
-            modalImage.src = slides[slideIndex].src;
-            modalImage.alt = slides[slideIndex].alt;
+
+        // Initialize a slider with a starting slide index
+        function initSlider(sliderId, startIndex) {
+            const sliders = document.querySelectorAll('.product-slider');
+            
+            sliders.forEach((slider, index) => {
+                // Set data attribute for current slide
+                slider.setAttribute('data-current-slide', startIndex);
+                
+                // Make sure first slide is active
+                const slides = slider.querySelectorAll('.slide');
+                slides.forEach((slide, i) => {
+                    if (i === startIndex) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
+            });
         }
-        
-        // Show the modal
-        imageModal.style.display = 'flex';
-        
-        // Disable scrolling on the body when modal is open
-        document.body.style.overflow = 'hidden';
-    }
-    
-    function closeImageModal() {
-        imageModal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-        currentModalProductId = null;
-    }
-    
-    // Close modal when clicking the X
-    closeModal.addEventListener('click', closeImageModal);
-    
-    // Close modal when clicking outside the image
-    imageModal.addEventListener('click', (e) => {
-        if (e.target === imageModal) {
-            closeImageModal();
+
+        // Update slider to show a specific slide
+        function updateSlider(sliderContainer, newIndex) {
+            const slides = sliderContainer.querySelectorAll('.slide');
+            
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            // Show the new slide
+            slides[newIndex].classList.add('active');
+            
+            // Update the current slide index
+            sliderContainer.setAttribute('data-current-slide', newIndex);
         }
-    });
-    
-    // Modal navigation arrows
-    modalPrev.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (!currentModalProductId) return;
-        
-        const productSlider = window.productSliders[currentModalProductId];
-        let currentSlide = productSlider.currentSlide;
-        currentSlide = (currentSlide - 1 + productSlider.totalSlides) % productSlider.totalSlides;
-        
-        // Update the slider in the product card
-        productSlider.currentSlide = currentSlide;
-        productSlider.updateSlider();
-        
-        // Update the modal image
-        const slides = productSlider.container.querySelectorAll('img');
-        modalImage.src = slides[currentSlide].src;
-        modalImage.alt = slides[currentSlide].alt;
-    });
-    
-    modalNext.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (!currentModalProductId) return;
-        
-        const productSlider = window.productSliders[currentModalProductId];
-        let currentSlide = productSlider.currentSlide;
-        currentSlide = (currentSlide + 1) % productSlider.totalSlides;
-        
-        // Update the slider in the product card
-        productSlider.currentSlide = currentSlide;
-        productSlider.updateSlider();
-        
-        // Update the modal image
-        const slides = productSlider.container.querySelectorAll('img');
-        modalImage.src = slides[currentSlide].src;
-        modalImage.alt = slides[currentSlide].alt;
-    });
-    
-    // Keyboard navigation for modal
-    document.addEventListener('keydown', (e) => {
-        if (imageModal.style.display !== 'flex') return;
-        
-        if (e.key === 'Escape') {
-            closeImageModal();
-        } else if (e.key === 'ArrowLeft') {
-            modalPrev.click();
-        } else if (e.key === 'ArrowRight') {
-            modalNext.click();
-        }
-    });
-    
-    // Initialize all product sliders when the page loads
-    document.addEventListener('DOMContentLoaded', () => {
-        // Initialize all product sliders
-        const productCards = document.querySelectorAll('.product-card');
-        productCards.forEach(card => {
-            initProductSlider(card);
-        });
-    });
-</script>
+    </script>
 </body>
 </html>
